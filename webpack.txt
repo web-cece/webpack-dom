@@ -1,0 +1,62 @@
+webpack打包
+一、安装
+    npm init -y
+    npm i webpack webpack-cli -D  或 安装某个特定版本 
+
+目录结构
+    |– less
+    |– src  (个人项目存放文件)
+    | |– css
+    | | |– index.css
+    | | |– index.scss
+    | |– images
+    | | |– 图片
+    | |– js
+    | | |– index.js
+    | | |– less.js
+    |– node_modules
+    |– postcss.config.js 
+    |– webpack.config.js
+    |– package.json
+
+二、loader安装
+
+    1、图片打包
+        file-loader  图片或font-icon打包 
+        安装 ->  npm i file-loader -D
+        
+        url-loader   -> limit（图片大小）
+        安装 ->  npm i url-loader -D
+        {
+            test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/',
+                    limit: 2048  //url-loader存在，file-loader不存在
+                }
+            }]
+        }
+
+    2、css 打包
+        style-loader   
+        安装 ->  npm i style-loader -D
+        css-loader 
+        安装 ->  npm i style-loader -D
+        sass-loader
+        安装 ->  npm i sass-loader node-sass webpack -D
+        postcss-loader -> 自动返现商户 需 配置 autoprefixer（css默认商户前缀）
+        安装 ->  npm i postcss-loader -D
+            autoprefixer 安装
+            npm i postcss autoprefixer
+            新建 postcss.config.js 文件
+            module.exports = {
+                plugins: [
+                    require('autoprefixer')
+                ]
+            }
+    4、js打包
+    5、html打包
+
+    

@@ -1,0 +1,9 @@
+@import 'index.scss';
+body {
+    .active {
+        border: 1px solod #000;
+        width: 100px;
+        height: 100px;
+        transform: translate('100px', '100px')
+    }
+}
